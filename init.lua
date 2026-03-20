@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/site")
 vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
 
 require("lazy").setup("plugins")
@@ -41,6 +42,6 @@ vim.opt.mouse = "a"
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 99
