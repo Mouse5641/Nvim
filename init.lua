@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/site")
 vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
