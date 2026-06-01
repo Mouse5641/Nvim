@@ -9,13 +9,14 @@ return {
 
       -- Автозбереження + автокомпіляція
       vim.g.vimtex_compiler_latexmk = {
-        build_dir = "build",
+        --<D-;>build_dir = "build",
         options = {
           "-shell-escape",
           "-verbose",
           "-file-line-error",
           "-synctex=1",
           "-interaction=nonstopmode",
+          --"-outdir=build",
         },
       }
 

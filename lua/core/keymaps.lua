@@ -64,3 +64,6 @@ keymap("n", "<A-Down>", ":m .+1<CR>==", opts)
 keymap("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "<A-Down>", ":m '>+1<CR>gv=gv", opts)
 
+
+
+
