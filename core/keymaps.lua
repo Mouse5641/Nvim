@@ -11,7 +11,7 @@ keymap("n", "<leader>f", ":Neotree focus<CR>", opts)
 keymap("n", "<leader>n", ":Neotree toggle<CR>", opts)
 keymap("n", "<leader>g", ":Neotree git_status<CR>", opts)
 keymap("n", "<leader>r", ":Neotree reveal<CR>", opts)
-keymap("n", "o", function()
+keymap("n", "<leader>o", function()
   vim.fn.jobstart({ "xdg-open", vim.fn.expand("%") }, { detach = true })
 end, opts)
 
