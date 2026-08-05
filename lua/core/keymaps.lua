@@ -62,6 +62,12 @@ end, opts)
 keymap("n", "<leader>p", vim.diagnostic.open_float, opts)
 keymap("n", "<leader>o", vim.diagnostic.setqflist, opts)
 
+-- leader + t → красивий список діагностик усього проєкту (trouble.nvim)
+keymap("n", "<leader>t", "<cmd>Trouble diagnostics toggle<CR>", opts)
+
+-- leader + T → той самий список, але тільки для поточного буфера
+keymap("n", "<leader>T", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", opts)
+
 ----------------------------------------------------------------
 -- Move text up/down (Alt + Up/Down)
 ----------------------------------------------------------------
