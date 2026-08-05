@@ -22,16 +22,9 @@ end, opts)
 -- Tabs ??????????????????????????????
 ----------------------------------------------------------------
 
--- Alt + Right → next tab
 keymap("n", "<A-Right>", ":tabnext<CR>", opts)
-
--- Alt + Left → previous tab
 keymap("n", "<A-Left>", ":tabprevious<CR>", opts)
-
--- Alt + t → new tab
 keymap("n", "<A-t>", ":tabnew<CR>", opts)
-
--- Alt + c → close tab
 keymap("n", "<A-c>", ":tabclose<CR>", opts)
 
 ----------------------------------------------------------------
@@ -42,25 +35,40 @@ keymap("n", "<A-c>", ":tabclose<CR>", opts)
 keymap("n", "<leader>i", function()
   vim.fn.jobstart({ "xdg-open", vim.fn.expand("%:p") }, { detach = true })
 end, opts)
-
--- Ctrl + a → select all
 keymap("n", "<C-a>", "ggVG", opts)
-
--- Ctrl + s → save
 keymap({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", opts)
-
--- Ctrl + v → paste from system clipboard
 keymap({ "n", "v" }, "<C-v>", '"+p', opts)
+
+----------------------------------------------------------------
+-- Diagnostics
+----------------------------------------------------------------
+
+-- ]d / [d → наступна/попередня діагностика (будь-якого рівня)
+keymap("n", "]p", function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end, opts)
+keymap("n", "[p", function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end, opts)
+
+-- ]e / [e → наступна/попередня саме помилка (ERROR)
+keymap("n", "]o", function()
+  vim.diagnostic.jump({ count = 1, float = true, severity = vim.diagnostic.severity.ERROR })
+end, opts)
+keymap("n", "[o", function()
+  vim.diagnostic.jump({ count = -1, float = true, severity = vim.diagnostic.severity.ERROR })
+end, opts)
+
+keymap("n", "<leader>p", vim.diagnostic.open_float, opts)
+keymap("n", "<leader>o", vim.diagnostic.setqflist, opts)
 
 ----------------------------------------------------------------
 -- Move text up/down (Alt + Up/Down)
 ----------------------------------------------------------------
 
--- Normal mode
 keymap("n", "<A-Up>", ":m .-2<CR>==", opts)
 keymap("n", "<A-Down>", ":m .+1<CR>==", opts)
 
--- Visual mode
 keymap("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "<A-Down>", ":m '>+1<CR>gv=gv", opts)
 
