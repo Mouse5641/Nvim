@@ -1,0 +1,13 @@
+-- -- langmap: команди (hjkl, dd, yy, leader-комбінації, [p ]p тощо) працюють
+-- -- так, ніби набрані в англійській розкладці, навіть якщо активна українська.
+-- -- Insert-режим не зачіпається — текст набирається як завжди.
+-- vim.opt.langremap = false
+-- vim.opt.langmap = [[йцукенгшщзхїґфівапролджєячсмитьбю.;qwertyuiop[]asdfghjkl\;'zxcvbnm\,./QWERTYUIOP[]ASDFGHJKL\;'ZXCVBNM\,.]]
+-- йцукенгшщзхїґ
+-- qwertyuiop[]\
+--
+-- фівапролджє 
+-- asdfghjkl;'
+--
+-- ячсмитьбю.
+-- zxcvbnm,./

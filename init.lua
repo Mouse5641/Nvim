@@ -21,6 +21,7 @@ require("lazy").setup("plugins")
 -- })
 require("core.keymaps")
 require("core.diagnostics")
+require("core.langmap")
 
 -- увімкнути 24-bit кольори
 vim.opt.termguicolors = true
