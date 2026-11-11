@@ -1,0 +1,21 @@
+% Титульна сторінка для звітів (pandoc -H report.tex).
+% Дані береться з YAML-шапки markdown-файлу: title, author, date.
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \centering
+    \vspace*{\fill}
+    {\LARGE\bfseries \@title \par}
+    \vspace{2.5cm}
+    {\large \textbf{Автор:} \@author \par}
+    \vspace{0.6cm}
+    {\large \textbf{Дата:} \@date \par}
+    \vspace*{\fill}
+  \end{titlepage}
+}
+\makeatother
+
+% Абзаци з відступом між ними, без червоного рядка
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
